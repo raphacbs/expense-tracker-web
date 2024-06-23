@@ -1,7 +1,7 @@
 import HomePage from './pages/home/HomePage';
 import { isAuthenticated } from './actions/auth';
 import LoginPage from './pages/login/LoginPage';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { ConfigProvider } from "antd"
 import ptBr from 'antd/locale/pt_BR';
 import {
@@ -14,9 +14,24 @@ import theme from './utils/theme'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './i18n';
 import LanguageSelector from 'components/LanguageSelectorComponent';
+import LayoutPage from 'pages/LayoutPage';
+import CategoryPage from 'pages/category/CategoryPage';
 
 const queryClient = new QueryClient()
 const App: React.FC = () => {
+
+  const buildElement = (element : JSX.Element, isLoginPage = false) =>{
+    if(isLoginPage){
+      return element
+    }else{
+      return (
+        <RequireAuth>
+          <LayoutPage>{element}</LayoutPage>
+        </RequireAuth>
+      )
+    }
+  }
+
 
   return (
     <ConfigProvider theme={theme} locale={ptBr}>
@@ -24,15 +39,15 @@ const App: React.FC = () => {
         <LanguageSelector /> {/* Adicionar o componente de seleção de idioma */}
         <Routes>
           <Route>
-            <Route path="/" element={<RequireAuth><HomePage /></RequireAuth>} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={buildElement(<HomePage />)} />
+            <Route path="/login" element={buildElement(<LoginPage/>)} />
             <Route
               path="/home"
-              element={
-                <RequireAuth>
-                  <HomePage />
-                </RequireAuth>
-              }
+              element={buildElement(<HomePage />)}
+            />
+            <Route
+              path="/category"
+              element={buildElement(<CategoryPage />)}
             />
           </Route>
         </Routes>

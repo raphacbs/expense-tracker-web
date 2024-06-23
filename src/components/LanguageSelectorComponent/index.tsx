@@ -13,7 +13,7 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div style={{ position: 'fixed', top: 10, left: 10, zIndex: 1000 }}>
+    <div style={{ position: 'fixed', top: 10, right: 10, zIndex: 1000 }}>
       <Select
         defaultValue={i18n.language}
         style={{ width: 150 }}

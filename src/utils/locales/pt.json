@@ -17,5 +17,15 @@
   },
   "erroCodes": {
     "100010": "Usuário ou senha inválidos"
+  },
+  "layoutPage": {
+    "homeMenu": "Inicio",
+    "categoryMenu": "Categoria"
+  },
+  "homePage":{
+    "content": "Bem vindo a página principal!"
+  },
+  "categoryPage":{
+    "addButton": "Adicionar"
   }
 }

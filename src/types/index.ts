@@ -1,14 +1,15 @@
 import { loginFailure, loginSuccess } from "reducers/authReducer";
 import { LOGIN_FAILURE, LOGIN_SUCCESS } from "../actions/auth";
+import type { MenuProps } from 'antd';
 
 interface LoginSuccessAction {
-    type: string;
-    payload: User;
+  type: string;
+  payload: User;
 }
 
 interface LoginFailureAction {
-    type: string;
-    payload: string;
+  type: string;
+  payload: string;
 }
 
 export type AuthActionTypes = LoginSuccessAction | LoginFailureAction;
@@ -46,8 +47,44 @@ export interface UserBodyResponse {
 }
 
 export interface UserBodyRequest {
-  email: string, 
+  email: string,
   password: string
 }
 
 export type NotificationType = 'success' | 'info' | 'warning' | 'error';
+
+export type MenuItem = Required<MenuProps>['items'][number];
+
+export type ExtendedMenuItem = MenuItem & {
+  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
+  path?: string;
+};
+
+export interface CategoryState {
+  selectedCategory: Category | null,
+  categories: Category[],
+  isLoading: boolean,
+  params: CategoryParam
+}
+
+export interface Category {
+  id?: string,
+  name: string,
+  description: string,
+  color: string,
+  type: string,
+  isDeleted: boolean
+}
+
+export type CategoryParam = Params & {
+  name: string | null,
+  description: string | null,
+  type: "R | E" | null
+}
+
+export type Params  = {
+  pageSize: number,
+  sortBy: string,
+  sortDir: string,
+  pageNo: number
+}

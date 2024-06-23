@@ -17,5 +17,15 @@
   },
   "erroCodes": {
     "100010": "Invalid username or password"
+  },
+  "layoutPage": {
+    "homeMenu": "Home",
+    "categoryMenu": "Category"
+  },
+  "homePage":{
+    "content": "Welcome to the Home Page!"
+  },
+  "categoryPage":{
+    "addButton": "Add"
   }
 }
