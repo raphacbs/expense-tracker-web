@@ -1,0 +1,21 @@
+{
+  "loginPage": {
+    "notification": {
+      "loginSuccess": "Login realizado com sucesso!",
+      "redirecting": "Redirecionando",
+      "loginFailed": "Login falhou"
+    },
+    "placeholder": {
+      "email": "Email",
+      "password": "Senha"
+    },
+    "validationMessage": {
+      "emailField": "Por favor insira seu email!",
+      "passwordField": "Por favor insira sua senha!"
+    },
+    "loginButton": "Entrar"
+  },
+  "erroCodes": {
+    "100010": "Usuário ou senha inválidos"
+  }
+}

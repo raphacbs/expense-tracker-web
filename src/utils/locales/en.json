@@ -1,0 +1,21 @@
+{
+  "loginPage": {
+    "notification": {
+      "loginSuccess": "Successful login!",
+      "redirecting": "Redirecting",
+      "loginFailed": "Login failed"
+    },
+    "placeholder": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "validationMessage": {
+      "emailField": "Please input your email!",
+      "passwordField": "Please input your password!"
+    },
+    "loginButton": "Login"
+  },
+  "erroCodes": {
+    "100010": "Invalid username or password"
+  }
+}

@@ -1,26 +1,35 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": "./src",  // Define o diretório base para os caminhos personalizados
+    "paths": {
+      "@components/*": ["./components/*"],  // Path para os componentes
+      "@pages/*": ["./pages/*"], // Path para as páginas
+      "@utils/*": ["./utils/*"],  // Path para utilitários
+      "$actions/*": ["actions/*"],  // Path para actions
+      "@/*": ["./src/*"]
+    },
+    "target": "es5",  // Compilar para ES5 (pode ser ajustado conforme necessário)
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    ],  // Libs disponíveis para o projeto
+    "allowJs": true,  // Permitir arquivos JavaScript no projeto TypeScript
+    "skipLibCheck": true,  // Pular a verificação de bibliotecas
+    "esModuleInterop": true,  // Habilitar interoperabilidade de módulos ES
+    "allowSyntheticDefaultImports": true,  // Permitir importações sintéticas de padrões
+    "strict": true,  // Habilitar modo estrito (inclui strictNullChecks, etc.)
+    "forceConsistentCasingInFileNames": true,  // Forçar consistência no casing dos nomes dos arquivos
+    "noFallthroughCasesInSwitch": true,  // Reportar erro em switches sem 'break'
+    "module": "esnext",  // Formato de módulo para output
+    "moduleResolution": "node",  // Resolver módulos usando Node.js style
+    "resolveJsonModule": true,  // Permitir a importação de arquivos JSON como módulos
+    "isolatedModules": true,  // Habilitar compilação de módulos independentes (melhora a escalabilidade)
+    "noEmit": true,  // Não emitir arquivos compilados (usado para validação)
+    "jsx": "react-jsx"  // Habilitar suporte JSX para React
   },
   "include": [
-    "src"
-  ]
+    "src/**/*"// Diretório incluído para compilação
+  ],
+  "exclude": [ "test" ]
 }
