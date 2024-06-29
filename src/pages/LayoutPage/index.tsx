@@ -41,7 +41,7 @@ const App = ({ children }: { children: JSX.Element }) => {
         //TODO verificar essa abordagem
         dispacth(setPageTitle(pageTitle))
     }
-        , [t])
+        , [t, pageTitle])
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>

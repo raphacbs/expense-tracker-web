@@ -1,4 +1,4 @@
-export default {
+ const theme = {
   token: {
     // Seed Token
     colorPrimary: '#00b96b',
@@ -11,3 +11,6 @@ export default {
 
   },
 }
+
+
+export default theme;

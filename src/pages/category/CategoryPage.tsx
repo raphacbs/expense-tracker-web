@@ -111,7 +111,7 @@ const CategoryPage: React.FC = () => {
 
     useEffect(()=>{
         queryClient.invalidateQueries({ queryKey: [QUERY_CATEGORIES]})
-    }, [params])
+    }, [params, queryClient])
 
     return (
         <Flex vertical gap={20}>

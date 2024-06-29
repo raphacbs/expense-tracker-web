@@ -71,6 +71,6 @@ export const authenticationSlice = createSlice({
 export const { signIn, loginFailure, setStatus, signOut } = authenticationSlice.actions
 
 export const loggedUser = (state: RootState) => state.authenticator.user
-export const isLoading = (state: RootState) => state.authenticator.status == 'loading'
+export const isLoading = (state: RootState) => state.authenticator.status === 'loading'
 
 export default authenticationSlice.reducer

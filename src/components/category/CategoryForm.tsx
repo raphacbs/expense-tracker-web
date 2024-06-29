@@ -58,7 +58,7 @@ const CategoryForm: React.FC<CategoryFormProps> = ({ onSubmit, onSucessPost, onE
 
     useEffect(()=>{
         form.setFieldsValue(category)
-    },[category])
+    },[category, form])
 
     const { mutate: post } = usePostCategories(handleSuccessPost, handleErrorPost);
     const { mutate: put } = usePutCategories(handleSuccessPut, handleErrorPut);
