@@ -51,7 +51,7 @@ const LoginPage: React.FC = () => {
     },
     onError(error: AxiosError) {
      
-      if (error.code == 'ERR_BAD_REQUEST') {
+      if (error.code === 'ERR_BAD_REQUEST') {
         openNotificationWithIcon("error", t("loginPage.notification.loginFailed"),t("erroCodes.100010"), 0)
       }
       dispatch(signOut())

@@ -38,10 +38,10 @@ const App = ({ children }: { children: JSX.Element }) => {
     };
 
     useEffect(() => {
-        //TODO verificar essa abordagem
-        dispacth(setPageTitle(pageTitle))
-    }
-        , [t, pageTitle])
+          dispacth(setPageTitle(pageTitle))
+    }, [t, pageTitle, dispacth])
+
+    
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
