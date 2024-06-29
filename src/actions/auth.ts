@@ -1,9 +1,10 @@
 import { ThunkAction } from 'redux-thunk';
 import { RootState } from '../reducers';
 import axiosInstance from '../utils/api';
-import { AuthActionTypes, User } from 'types'; // Certifique-se de importar corretamente o tipo User
-import { Action, UnknownAction, Dispatch } from 'redux';
+import { User } from 'types'; // Certifique-se de importar corretamente o tipo User
+import { UnknownAction, Dispatch } from 'redux';
 import { loginSuccess, loginFailure, setLoading } from '../reducers/authReducer';
+
 
 // Tipos de ações 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -27,7 +28,7 @@ export const login = (
         payload: user,
         type: loginSuccess.name
       }); // Dispatch da action correta: loginSuccess
-    } catch (error: any) {
+    } catch (error) {
       dispatch({
         payload: 'Login failed',
         type: loginFailure.name

@@ -16,7 +16,7 @@ const LoginPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const loading = useAppSelector(isLoading)
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
 
   const openNotificationWithIcon = (type: NotificationType, message: string, description: string, duration: number) => {
@@ -29,7 +29,7 @@ const LoginPage: React.FC = () => {
 
 
 
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: { email: string, password: string }) => {
     const user: UserBodyRequest = { email: values.email, password: values.password }
     //  await dispatch(doLogin(user))
     //  navigate("/home")
@@ -49,8 +49,8 @@ const LoginPage: React.FC = () => {
       openNotificationWithIcon("success", t("loginPage.notification.loginSuccess"), t("loginPage.notification.redirecting"), 2)
       navigate("/home")
     },
-    onError(error: AxiosError, variables, context) {
-      const data: any = error.response?.data;
+    onError(error: AxiosError) {
+     
       if (error.code == 'ERR_BAD_REQUEST') {
         openNotificationWithIcon("error", t("loginPage.notification.loginFailed"),t("erroCodes.100010"), 0)
       }

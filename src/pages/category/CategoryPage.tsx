@@ -37,7 +37,7 @@ const CategoryPage: React.FC = () => {
         
     };
 
-    const onSearch: SearchProps['onSearch'] = (value, _e, info) => {
+    const onSearch: SearchProps['onSearch'] = (value) => {
         dispatch(setParams({ ...params, name: value }));
     }
     const columns = [
@@ -65,7 +65,7 @@ const CategoryPage: React.FC = () => {
         {
             title: t("categoryPage.actionColumn"),
             key: 'action',
-            render: (text: any, record: any) => (
+            render: (text: string, record: Category) => (
                 <Button type="link" icon={<EditOutlined />} onClick={() => handleEdit(record)} />
             ),
         },
@@ -98,7 +98,7 @@ const CategoryPage: React.FC = () => {
         );
     };
 
-    const { data, error, isError, isFetched, isSuccess, isLoading: isLoadingC } = useFetchCategories(params);
+    const { data, error, isError, isSuccess, isLoading: isLoadingC } = useFetchCategories(params);
     dispatch(setLoading(isLoadingC))
 
     if (isSuccess) {

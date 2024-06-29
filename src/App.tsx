@@ -1,7 +1,7 @@
 import HomePage from './pages/home/HomePage';
 import { isAuthenticated } from './actions/auth';
 import LoginPage from './pages/login/LoginPage';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { ConfigProvider } from "antd"
 import ptBr from 'antd/locale/pt_BR';
 import {
@@ -55,7 +55,7 @@ const App: React.FC = () => {
 };
 
 function RequireAuth({ children }: { children: JSX.Element }) {
-  let location = useLocation();
+  const location = useLocation();
   if (!isAuthenticated()) {
     // Redirect them to the /login page, but save the current location they were
     // trying to go to when they were redirected. This allows us to send them

@@ -21,7 +21,7 @@ const App = ({ children }: { children: JSX.Element }) => {
     const [current, setCurrent] = useState('1');
     const { Title } = Typography
     const {
-        token: { colorBgContainer, borderRadius, borderRadiusContainer, colorBgHeader },
+        token: { colorBgContainer, borderRadiusContainer, colorBgHeader },
     } = theme;
     const menus: ExtendedMenuItem[] = getMenus(t);
 

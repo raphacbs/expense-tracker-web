@@ -69,7 +69,7 @@ export const categorySlice = createSlice({
                 state.params.totalPages = action.payload.totalPages
                 state.params.totalElements = action.payload.totalElements
             })
-            .addCase(fetch.rejected, (state, action) => {
+            .addCase(fetch.rejected, (state) => {
                 state.status = 'idle'
                 state.categories = []
                 state.selectedCategory = emptyCategory

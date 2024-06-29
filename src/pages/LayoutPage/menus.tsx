@@ -1,3 +1,4 @@
+import React from 'react';
 import { HomeOutlined, FolderOutlined, DesktopOutlined } from '@ant-design/icons';
 import { ExtendedMenuItem } from 'types';
 import { TFunction } from 'i18next';
@@ -9,7 +10,7 @@ export function getMenus(translater: TFunction<"translation", undefined>){
             key: "home",
             icon: <HomeOutlined />,
             path: "/home",
-            onClick: (event: any) => { console.log("Olá") },
+            onClick: () => { console.log("Olá") },
             title:"layoutPage.homeMenu"
 
         },
@@ -17,7 +18,7 @@ export function getMenus(translater: TFunction<"translation", undefined>){
             label: translater("layoutPage.categoryMenu"),
             key: "category",
             icon: <FolderOutlined />,
-            onClick: (event: any) => { console.log("Categoria") },
+            onClick: () => { console.log("Categoria") },
             path: "/category",
             title: "layoutPage.categoryMenu"
         },
@@ -25,7 +26,7 @@ export function getMenus(translater: TFunction<"translation", undefined>){
             label: "Opção 2",
             key: "option2",
             icon: <DesktopOutlined />,
-            onClick: (event: any) => { console.log("Opção 2") }
+            onClick: () => { console.log("Opção 2") }
         },
     ] as ExtendedMenuItem[]
 };
