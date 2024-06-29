@@ -13,7 +13,6 @@ import {
 import theme from './utils/theme'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './i18n';
-import LanguageSelector from 'components/LanguageSelectorComponent';
 import LayoutPage from 'pages/LayoutPage';
 import CategoryPage from 'pages/category/CategoryPage';
 
@@ -36,7 +35,6 @@ const App: React.FC = () => {
   return (
     <ConfigProvider theme={theme} locale={ptBr}>
       <QueryClientProvider client={queryClient}>
-        <LanguageSelector /> {/* Adicionar o componente de seleção de idioma */}
         <Routes>
           <Route>
             <Route path="/" element={buildElement(<HomePage />)} />

@@ -22,10 +22,47 @@
     "homeMenu": "Home",
     "categoryMenu": "Category"
   },
-  "homePage":{
+  "homePage": {
     "content": "Welcome to the Home Page!"
   },
-  "categoryPage":{
-    "addButton": "Add"
+  "categoryPage": {
+    "addButton": "Add",
+    "nameColumn": "Name",
+    "descriptionColumn": "Description",
+    "colorColumn": "Color",
+    "typeColumn": "Type",
+    "actionColumn": "Action",
+    "searchButton": "Search",
+    "placeholderSearchField": "Input the name",
+    "validationMessage": {
+      "saved": "Saved!",
+      "operationSuccess": "Operation performed successfully!",
+      "error": "Error",
+      "operationError": "Operation not performed!"
+    }
+  },
+  "categoryForm": {
+    "nameField": "Name",
+    "descriptionField": "Description",
+    "colorField": "Color",
+    "typeField": "Type",
+    "submitButton": "Save",
+    "cancelButton": "Cancel",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "selectField": "Select",
+    "editTitle": "Edit Category",
+    "addTitle": "Add Category",
+    "validationMessage": {
+      "nameFieldError": "Please input the name!",
+      "descriptionFieldError": "Please input the description!",
+      "colorFieldError": "Please select a color!",
+      "typeFieldError": "Please select a type!"
+    },
+    "nameFieldPlaceholder":"input the name",
+    "descriptionFieldPlaceholder":"input the description",
+    "typeFieldPlaceholder":"input the type",
+    "expenseOption":"Expense",
+    "revenueOption":"Revenue"
   }
 }

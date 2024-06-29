@@ -1,6 +1,5 @@
-import { loginFailure, loginSuccess } from "reducers/authReducer";
-import { LOGIN_FAILURE, LOGIN_SUCCESS } from "../actions/auth";
 import type { MenuProps } from 'antd';
+
 
 interface LoginSuccessAction {
   type: string;
@@ -25,7 +24,7 @@ export interface AuthenticationState {
   isAuthenticated: boolean;
   error: string | null;
   user: User | null;
-  status: 'idle' | 'loading' | 'failed';
+  status: StatusType;
   token: null | string;
 }
 
@@ -58,13 +57,25 @@ export type MenuItem = Required<MenuProps>['items'][number];
 export type ExtendedMenuItem = MenuItem & {
   onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
   path?: string;
+  title: string;
 };
 
 export interface CategoryState {
-  selectedCategory: Category | null,
+  selectedCategory: Category,
   categories: Category[],
-  isLoading: boolean,
+  status: StatusType,
+  isLoading: boolean
   params: CategoryParam
+}
+
+export interface CategoryResponseBody {
+  items: Category[],
+  pageSize: number,
+  sortBy: string,
+  sortDir: string,
+  pageNo: number,
+  totalPages: number,
+  totalElements: number
 }
 
 export interface Category {
@@ -86,5 +97,25 @@ export type Params  = {
   pageSize: number,
   sortBy: string,
   sortDir: string,
-  pageNo: number
+  pageNo: number,
+  totalPages: number,
+  totalElements: number
 }
+
+export type StatusType = 'idle' | 'loading' | 'failed';
+
+export const emptyCategory: Category = {
+  name: '',
+  description: '',
+  color: "#000000",
+  type: '',
+  isDeleted: false
+};
+
+export interface GlobalState {
+  isLoading: boolean
+  isOpenDrawer: boolean,
+  pageTitle: string,
+}
+
+export const QUERY_CATEGORIES:string = 'CATEGORIES';

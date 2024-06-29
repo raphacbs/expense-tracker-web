@@ -24,8 +24,47 @@
   },
   "homePage":{
     "content": "Bem vindo a página principal!"
+  }, 
+  "categoryPage": {
+    "addButton": "Add",
+    "nameColumn": "Name",
+    "descriptionColumn": "Description",
+    "colorColumn": "Color",
+    "typeColumn": "Type",
+    "actionColumn": "Action",
+    "searchButton": "Search",
+    "placeholderSearchField": "Input the name",
+    "validationMessage": {
+      "saved": "Salvo!",
+      "operationSuccess": "Operação realizada com sucesso!",
+      "error": "Erro",
+      "operationError": "Operação não realizada!"
+    }
   },
-  "categoryPage":{
-    "addButton": "Adicionar"
+  "categoryForm": {
+    "nameField": "Nome",
+    "descriptionField": "Descrição",
+    "colorField": "Cor",
+    "typeField": "Tipo",
+    "submitButton": "Salvar",
+    "cancelButton": "Cancelar",
+    "editButton": "Editar",
+    "deleteButton": "Excluir",
+    "selectField": "Selecionar",
+    "editTitle": "Editar Categoria",
+    "addTitle": "Adicionar Categoria",
+    "validationMessage": {
+      "nameFieldError": "Por favor, insira o nome!",
+      "descriptionFieldError": "Por favor, insira a descrição!",
+      "colorFieldError": "Por favor, selecione uma cor!",
+      "typeFieldError": "Por favor, selecione um tipo!"
+    },
+    "nameFieldPlaceholder":"insira o nome",
+    "descriptionFieldPlaceholder":"insira a descrição",
+    "typeFieldPlaceholder":"insira o tipo",
+    "expenseOption":"Despesa",
+    "revenueOption":"Receita"
   }
+  
+ 
 }

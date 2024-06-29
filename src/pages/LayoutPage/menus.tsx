@@ -1,6 +1,5 @@
 import { HomeOutlined, FolderOutlined, DesktopOutlined } from '@ant-design/icons';
 import { ExtendedMenuItem } from 'types';
-import i18n from '../../i18n';
 import { TFunction } from 'i18next';
 
 export function getMenus(translater: TFunction<"translation", undefined>){
@@ -10,14 +9,17 @@ export function getMenus(translater: TFunction<"translation", undefined>){
             key: "home",
             icon: <HomeOutlined />,
             path: "/home",
-            onClick: (event: any) => { console.log("Olá") }
+            onClick: (event: any) => { console.log("Olá") },
+            title:"layoutPage.homeMenu"
+
         },
         {
             label: translater("layoutPage.categoryMenu"),
             key: "category",
             icon: <FolderOutlined />,
             onClick: (event: any) => { console.log("Categoria") },
-            path: "/category"
+            path: "/category",
+            title: "layoutPage.categoryMenu"
         },
         {
             label: "Opção 2",
