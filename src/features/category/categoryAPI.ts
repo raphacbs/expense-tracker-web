@@ -1,6 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
-import { AppDispatch } from 'store';
 import { Category, CategoryParam, CategoryResponseBody, QUERY_CATEGORIES } from 'types';
 import axiosInstance from 'utils/api';
 
@@ -50,7 +49,7 @@ export const useFetchCategories = (params: CategoryParam) => {
 export const usePostCategories = (
         onSuccess?: (data: CategoryResponseBody) => void,
         onError?: (error:AxiosError, variables: any, context: any)=>void,
-        onSettled?: ()=>{}) =>  {
+        onSettled?: ()=>void) =>  {
     return useMutation({
         mutationKey: ["create_category"],
         mutationFn: post,
@@ -71,7 +70,7 @@ export const usePostCategories = (
 export const usePutCategories = (
     onSuccess?: (data: CategoryResponseBody) => void,
     onError?: (error:AxiosError, variables: any, context: any)=>void,
-    onSettled?: ()=>{}) =>  {
+    onSettled?: ()=>void) =>  {
 return useMutation({
     mutationKey: ["update_category"],
     mutationFn: put,

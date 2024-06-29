@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from 'store'
-import { AuthenticationState, User, UserBodyRequest, UserBodyResponse } from 'types';
+import { AuthenticationState, UserBodyRequest, UserBodyResponse } from 'types';
 import { login } from './authenticationAPI';
 import { isAuthenticated } from 'actions/auth';
 
@@ -60,7 +60,7 @@ export const authenticationSlice = createSlice({
                 state.user = action.payload
                 state.isAuthenticated = true
             })
-            .addCase(doLogin.rejected, (state, action) => {
+            .addCase(doLogin.rejected, (state) => {
                 state.status = 'idle'
                 state.user = null
                 state.isAuthenticated = false
