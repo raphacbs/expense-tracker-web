@@ -26,14 +26,14 @@
     "content": "Bem vindo a página principal!"
   }, 
   "categoryPage": {
-    "addButton": "Add",
-    "nameColumn": "Name",
-    "descriptionColumn": "Description",
-    "colorColumn": "Color",
-    "typeColumn": "Type",
-    "actionColumn": "Action",
-    "searchButton": "Search",
-    "placeholderSearchField": "Input the name",
+    "addButton": "Adicionar",
+    "nameColumn": "Nome",
+    "descriptionColumn": "Descrição",
+    "colorColumn": "Cor",
+    "typeColumn": "Tipo",
+    "actionColumn": "Ação",
+    "searchButton": "Buscar",
+    "placeholderSearchField": "Digite o nome",
     "validationMessage": {
       "saved": "Salvo!",
       "operationSuccess": "Operação realizada com sucesso!",
