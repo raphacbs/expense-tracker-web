@@ -37,7 +37,7 @@ const App: React.FC = () => {
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route>
-            <Route path="/" element={buildElement(<HomePage />, true)} />
+            <Route path="/" element={buildElement(<HomePage />)} />
             <Route path="/login" element={buildElement(<LoginPage/>, true)} />
             <Route
               path="/home"
