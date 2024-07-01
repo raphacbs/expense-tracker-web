@@ -53,6 +53,8 @@ const LoginPage: React.FC = () => {
      
       if (error.code === 'ERR_BAD_REQUEST') {
         openNotificationWithIcon("error", t("loginPage.notification.loginFailed"),t("erroCodes.100010"), 0)
+      }else{
+        openNotificationWithIcon("error", t("loginPage.notification.loginFailed"),error.message, 0)
       }
       dispatch(signOut())
 
