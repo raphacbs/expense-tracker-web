@@ -47,6 +47,14 @@ const App: React.FC = () => {
               path="/category"
               element={buildElement(<CategoryPage />)}
             />
+            <Route
+              path="/budget"
+              element={buildElement(<CategoryPage />)}
+            />
+            <Route
+              path="/transaction"
+              element={buildElement(<CategoryPage />)}
+            />
           </Route>
         </Routes>
       </QueryClientProvider>

@@ -20,7 +20,11 @@
   },
   "layoutPage": {
     "homeMenu": "Home",
-    "categoryMenu": "Category"
+    "categoryMenu": "Category",
+    "logoutMenu": "Logout",
+    "profileMenu": "Profile",
+    "budgetMenu": "Budget",
+    "transactionMenu": "Transaction"
   },
   "homePage": {
     "content": "Welcome to the Home Page!"

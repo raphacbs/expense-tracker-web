@@ -20,7 +20,11 @@
   },
   "layoutPage": {
     "homeMenu": "Inicio",
-    "categoryMenu": "Categoria"
+    "categoryMenu": "Categoria",
+    "logoutMenu": "Sair",
+    "profileMenu": "Perfil",
+    "budgetMenu": "Orçamento",
+    "transactionMenu": "Transação"
   },
   "homePage":{
     "content": "Bem vindo a página principal!"
