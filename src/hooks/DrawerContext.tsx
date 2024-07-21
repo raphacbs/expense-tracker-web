@@ -5,6 +5,7 @@ import { isOpenDrawer, setIsOpenDrawer } from 'features/global/globalSlice';
 
 interface DrawerContextProps {
   openDrawer: (title: string,
+    closeButtonLabel: string,
     content: ReactNode,
     actions?: ReactNode,
     placement?: DrawerProps['placement']) => void;
@@ -26,15 +27,20 @@ const DrawerProvider: FC<DrawerProviderProps> = ({ children }) => {
   const dispatch = useAppDispatch()
   const isOpenDraer = useAppSelector(isOpenDrawer)
   const [title, setTitle] = useState<string>("");
+  const [closeButtonLabel, setCloseButtonLabel] = useState<string>("");
   const [content, setContent] = useState<ReactNode>(null);
   const [actions, setActions] = useState<ReactNode>(null);
   const [placement, setPlacement] = useState<DrawerProps['placement']>('right');
 
-  const openDrawer = (title: string, content: ReactNode, actions?: ReactNode) => {
+  const openDrawer = (title: string, 
+                      closeButtonLabel: string,
+                      content: ReactNode, 
+                      actions?: ReactNode) => {
     setTitle(title);
     setContent(content);
     setActions(actions);
     setPlacement(placement);
+    setCloseButtonLabel(closeButtonLabel);
     dispatch(setIsOpenDrawer(true))
   };
 
@@ -56,7 +62,7 @@ const DrawerProvider: FC<DrawerProviderProps> = ({ children }) => {
         open={isOpenDraer}
         extra={
           <Space>
-            <Button onClick={closeDrawer}>Cancel</Button>
+            <Button onClick={closeDrawer}>{closeButtonLabel}</Button>
             {actions}
           </Space>
         }

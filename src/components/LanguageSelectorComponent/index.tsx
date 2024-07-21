@@ -19,11 +19,11 @@ const LanguageSelector = () => {
         style={{ width: 150 }}
         onChange={handleChange}
       >
-        <Option value="en-US">
+        <Option value="en-US" label="English">
           <Flag code="USA" height="16" style={{ marginRight: 8 }} />
           English
         </Option>
-        <Option value="pt-BR">
+        <Option value="pt-BR" label="Português">
           <Flag code="BR" height="16" style={{ marginRight: 8 }} />
           Português
         </Option>

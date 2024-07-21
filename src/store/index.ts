@@ -1,13 +1,15 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import authenticatorReducer from 'features/authentication/authenticationSlice';
-import categoryReducer from './../features/category/categorySlice';
+import categoryReducer from 'features/category/categorySlice';
 import globalReducer from 'features/global/globalSlice';
+import budgetReducer from 'features/budget/budgetSlice';
 export const store = configureStore(
   {
     reducer: {
       authenticator: authenticatorReducer,
       category: categoryReducer,
-      global: globalReducer
+      global: globalReducer,
+      budget: budgetReducer,
     },
   }
 );

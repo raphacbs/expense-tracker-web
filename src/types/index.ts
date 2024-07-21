@@ -60,16 +60,8 @@ export type ExtendedMenuItem = MenuItem & {
   title: string;
 };
 
-export interface CategoryState {
-  selectedCategory: Category,
-  categories: Category[],
-  status: StatusType,
-  isLoading: boolean
-  params: CategoryParam
-}
-
-export interface CategoryResponseBody {
-  items: Category[],
+interface ResponseBody<T> {
+  items: T[],
   pageSize: number,
   sortBy: string,
   sortDir: string,
@@ -77,6 +69,38 @@ export interface CategoryResponseBody {
   totalPages: number,
   totalElements: number
 }
+
+export interface CategoryState {
+  selectedCategory: Category,
+  categories: Category[],
+  status: StatusType,
+  isLoading: boolean
+  params: CategoryParam
+}
+export interface BudgetState {
+  selectedBudget: Budget | null,
+  budgets: Budget[],
+  status: StatusType,
+  isLoading: boolean,
+  params: BudgetParam
+}
+
+export type BudgetResponseBody = ResponseBody<Budget>;
+
+
+export interface Budget {
+  id?: string,
+  name: string,
+  startDate: string,
+  endDate?: string,
+  notes?: string,
+  amount: number,
+  frequency: string,
+  categoryId: string,
+  isDeleted: boolean
+}
+
+export type CategoryResponseBody = ResponseBody<Category>;
 
 export interface Category {
   id?: string,
@@ -93,7 +117,12 @@ export type CategoryParam = Params & {
   type: "R | E" | null
 }
 
-export type Params  = {
+export type BudgetParam = Params & {
+  startDate: string,
+  endDate: string,
+}
+
+export type Params = {
   pageSize: number,
   sortBy: string,
   sortDir: string,
@@ -118,4 +147,4 @@ export interface GlobalState {
   pageTitle: string,
 }
 
-export const QUERY_CATEGORIES:string = 'CATEGORIES';
+export const QUERY_CATEGORIES: string = 'CATEGORIES';

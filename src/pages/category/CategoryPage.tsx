@@ -92,6 +92,7 @@ const CategoryPage: React.FC = () => {
     const handleOpenDrawer = (title: string) => {
         openDrawer(
             title,
+            t("categoryForm.cancelButton"),
             <CategoryForm 
                 onSucessPost={handleSaveCategory} 
                 onSucessPut={handleSaveCategory}/>

@@ -28,4 +28,23 @@ axiosInstance.interceptors.request.use(
   }
 );
 
+// Função genérica para POST
+export async function postRequest<T>(url: string, data: T) {
+  const response = await axiosInstance.post(url, data);
+  return response.data;
+}
+
+// Função genérica para GET
+export async function getRequest<T>(url: string, params?: T) {
+  const response = await axiosInstance.get(url, { params });
+  return response.data;
+}
+
+// Função genérica para PUT
+export async function putRequest<T>(url: string, data: T) {
+  const response = await axiosInstance.put(url, data);
+  return response.data;
+}
+
+
 export default axiosInstance;

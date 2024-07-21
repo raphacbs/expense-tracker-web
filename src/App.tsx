@@ -1,9 +1,11 @@
 import HomePage from './pages/home/HomePage';
 import { isAuthenticated } from './actions/auth';
 import LoginPage from './pages/login/LoginPage';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ConfigProvider } from "antd"
 import ptBr from 'antd/locale/pt_BR';
+import enUs from 'antd/locale/en_US';
+
 import {
   Routes,
   Route,
@@ -15,14 +17,29 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './i18n';
 import LayoutPage from 'pages/LayoutPage';
 import CategoryPage from 'pages/category/CategoryPage';
+import BudgetPage from 'pages/budget/BudgetPage';
+import { useTranslation } from 'react-i18next';
 
 const queryClient = new QueryClient()
 const App: React.FC = () => {
 
-  const buildElement = (element : JSX.Element, isLoginPage = false) =>{
-    if(isLoginPage){
+  const { i18n } = useTranslation();
+  const [locale, setLocale] = useState(ptBr);
+
+  useEffect(() => {
+    const currentLanguage = i18n.language;
+    console.log('Current language:', currentLanguage);
+    if (currentLanguage === 'pt-BR') {
+      setLocale(ptBr);
+    } else {
+      setLocale(enUs);
+    }
+  }, [i18n.language]);
+
+  const buildElement = (element: JSX.Element, isLoginPage = false) => {
+    if (isLoginPage) {
       return element
-    }else{
+    } else {
       return (
         <RequireAuth>
           <LayoutPage>{element}</LayoutPage>
@@ -33,12 +50,12 @@ const App: React.FC = () => {
 
 
   return (
-    <ConfigProvider theme={theme} locale={ptBr}>
+    <ConfigProvider theme={theme} locale={locale}>
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route>
             <Route path="/" element={buildElement(<HomePage />)} />
-            <Route path="/login" element={buildElement(<LoginPage/>, true)} />
+            <Route path="/login" element={buildElement(<LoginPage />, true)} />
             <Route
               path="/home"
               element={buildElement(<HomePage />)}
@@ -49,7 +66,7 @@ const App: React.FC = () => {
             />
             <Route
               path="/budget"
-              element={buildElement(<CategoryPage />)}
+              element={buildElement(<BudgetPage />)}
             />
             <Route
               path="/transaction"

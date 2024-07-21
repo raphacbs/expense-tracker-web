@@ -23,7 +23,7 @@ const initialState: CategoryState = {
     isLoading:false
 }
 
-export const fetch = createAsyncThunk(
+export const fetchCategories = createAsyncThunk(
     'category/get',
     async (params: CategoryParam) => {
         return await getWithParams(params);
@@ -56,10 +56,10 @@ export const categorySlice = createSlice({
     },
     extraReducers(builder) {
         builder
-            .addCase(fetch.pending, state => {
+            .addCase(fetchCategories.pending, state => {
                 state.status = 'loading'
             })
-            .addCase(fetch.fulfilled, (state, action: PayloadAction<CategoryResponseBody>) => {
+            .addCase(fetchCategories.fulfilled, (state, action: PayloadAction<CategoryResponseBody>) => {
                 state.status = 'idle'
                 state.categories = action.payload.items
                 state.params.pageNo = action.payload.pageNo
@@ -69,7 +69,7 @@ export const categorySlice = createSlice({
                 state.params.totalPages = action.payload.totalPages
                 state.params.totalElements = action.payload.totalElements
             })
-            .addCase(fetch.rejected, (state) => {
+            .addCase(fetchCategories.rejected, (state) => {
                 state.status = 'idle'
                 state.categories = []
                 state.selectedCategory = emptyCategory

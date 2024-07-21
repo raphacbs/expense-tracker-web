@@ -1,34 +1,34 @@
 {
   "loginPage": {
     "notification": {
-      "loginSuccess": "Login realizado com sucesso!",
-      "redirecting": "Redirecionando",
-      "loginFailed": "Login falhou"
+      "loginSuccess": "Successful login!",
+      "redirecting": "Redirecting",
+      "loginFailed": "Login failed"
     },
     "placeholder": {
       "email": "Email",
-      "password": "Senha"
+      "password": "Password"
     },
     "validationMessage": {
-      "emailField": "Por favor insira seu email!",
-      "passwordField": "Por favor insira sua senha!"
+      "emailField": "Por favor, insira seu email!",
+      "passwordField": "Por favor, insira sua senha!"
     },
     "loginButton": "Entrar"
   },
   "erroCodes": {
-    "100010": "Usuário ou senha inválidos"
+    "100010": "Nome de usuário ou senha inválidos"
   },
   "layoutPage": {
-    "homeMenu": "Inicio",
+    "homeMenu": "Início",
     "categoryMenu": "Categoria",
     "logoutMenu": "Sair",
     "profileMenu": "Perfil",
     "budgetMenu": "Orçamento",
     "transactionMenu": "Transação"
   },
-  "homePage":{
-    "content": "Bem vindo a página principal!"
-  }, 
+  "homePage": {
+    "content": "Bem-vindo à Página Inicial!"
+  },
   "categoryPage": {
     "addButton": "Adicionar",
     "nameColumn": "Nome",
@@ -36,7 +36,7 @@
     "colorColumn": "Cor",
     "typeColumn": "Tipo",
     "actionColumn": "Ação",
-    "searchButton": "Buscar",
+    "searchButton": "Pesquisar",
     "placeholderSearchField": "Digite o nome",
     "validationMessage": {
       "saved": "Salvo!",
@@ -68,7 +68,29 @@
     "typeFieldPlaceholder":"insira o tipo",
     "expenseOption":"Despesa",
     "revenueOption":"Receita"
+  },
+  "budgetPage": {
+    "addButton": "Adicionar",
+    "last7Days": "Últimos 7 Dias",
+    "last14Days": "Últimos 14 Dias",
+    "last30Days": "Últimos 30 Dias",
+    "last60Days": "Últimos 60 Dias",
+    "last90Days": "Últimos 90 Dias",
+    "month": "Mês",
+    "custom": "Personalizado",
+    "selectMonth": "Selecione o Mês",
+    "month1": "Janeiro",
+    "month2": "Fevereiro",
+    "month3": "Março",
+    "month4": "Abril",
+    "month5": "Maio",
+    "month6": "Junho",
+    "month7": "Julho",
+    "month8": "Agosto",
+    "month9": "Setembro",
+    "month10": "Outubro",
+    "month11": "Novembro",
+    "month12": "Dezembro",
+    "search": "Pesquisar"
   }
-  
- 
 }
