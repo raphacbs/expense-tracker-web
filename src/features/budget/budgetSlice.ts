@@ -15,6 +15,7 @@ const initialState : BudgetState = {
         pageNo: 0,
         totalPages: 0,
         totalElements: 0,
+        searchType: "month",
     },
     isLoading: false,
 };

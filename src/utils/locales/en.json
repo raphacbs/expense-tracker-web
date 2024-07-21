@@ -91,6 +91,19 @@
     "month10": "October",
     "month11": "November",
     "month12": "December",
-    "search": "Search"
+    "search": "Search",
+    "columnTable": {
+      "name": "Name",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "notes": "Notes",
+      "amount": "Amount",
+      "frequency": "Frequency",
+      "categoryId": "Category ID",
+      "categoryName": "Category Name",
+      "active": "Active",
+      "balance": "Balance",
+      "totalSpent": "Total Spent"
+    }
   }
 }

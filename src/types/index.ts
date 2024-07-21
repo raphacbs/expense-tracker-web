@@ -82,7 +82,7 @@ export interface BudgetState {
   budgets: Budget[],
   status: StatusType,
   isLoading: boolean,
-  params: BudgetParam
+  params: BudgetParam,
 }
 
 export type BudgetResponseBody = ResponseBody<Budget>;
@@ -97,6 +97,7 @@ export interface Budget {
   amount: number,
   frequency: string,
   categoryId: string,
+  categoryName: string,
   isDeleted: boolean
 }
 
@@ -120,6 +121,7 @@ export type CategoryParam = Params & {
 export type BudgetParam = Params & {
   startDate: string,
   endDate: string,
+  searchType: "month" | "custom"
 }
 
 export type Params = {

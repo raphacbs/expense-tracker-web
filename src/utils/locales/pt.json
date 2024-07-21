@@ -91,6 +91,19 @@
     "month10": "Outubro",
     "month11": "Novembro",
     "month12": "Dezembro",
-    "search": "Pesquisar"
+    "search": "Pesquisar",
+    "columnTable":{
+      "name": "Nome",
+      "startDate": "Data de Início",
+      "endDate": "Data de Término",
+      "notes": "Notas",
+      "amount": "Valor",
+      "frequency": "Frequência",
+      "categoryId": "ID da Categoria",
+      "categoryName": "Nome da Categoria",
+      "active": "Ativo",
+      "balance": "Saldo",
+      "totalSpent": "Total Gasto"
+    }
   }
 }
